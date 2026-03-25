@@ -1,9 +1,10 @@
-{ self, inputs, ... }: {
+{ self, inputs, ... }:
+{
 
-	flake.nixosConfigurations.disco = inputs.nixpkgs.lib.nixosSystem {
-		modules = [
-			self.nixosModules.discoConfiguration
-		];
-	};
+  flake.nixosConfigurations.disco = inputs.nixpkgs.lib.nixosSystem {
+    modules = [
+      self.nixosModules.discoConfiguration
+    ];
+  };
 
 }

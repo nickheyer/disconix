@@ -1,9 +1,12 @@
-{ self, inputs, ... }: {
+{ self, inputs, ... }:
+{
 
-	perSystem = { pkgs, ... }: {
+  perSystem =
+    { pkgs, ... }:
+    {
 
-		packages.discoNoctalia = inputs.wrapper-modules.wrappers.noctalia-shell.wrap {
-			settings = {};
-		};
-	};
-}		
+      packages.discoNoctalia = inputs.wrapper-modules.wrappers.noctalia-shell.wrap {
+        settings = { };
+      };
+    };
+}
