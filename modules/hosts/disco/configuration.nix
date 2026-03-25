@@ -13,9 +13,14 @@
         "nix-command"
         "flakes"
       ];
-      boot.loader.grub.enable = true;
-      boot.loader.grub.device = "/dev/vda";
-      boot.loader.grub.useOSProber = true;
+
+
+      boot.loader.systemd-boot.enable = true;
+      boot.loader.efi.canTouchEfiVariables = true;
+#      boot.loader.grub.enable = true;
+#      boot.loader.grub.device = "/dev/vda";
+#      boot.loader.grub.useOSProber = true;
+
       boot.kernelPackages = pkgs.linuxPackages_latest;
       networking.hostName = "disco";
       networking.wireless.enable = true;
@@ -34,9 +39,9 @@
         LC_TIME = "en_US.UTF-8";
       };
 
-      services.xserver.enable = true;
-      services.displayManager.gdm.enable = true;
-      services.desktopManager.gnome.enable = true;
+#      services.xserver.enable = true;
+#      services.displayManager.gdm.enable = true;
+#      services.desktopManager.gnome.enable = true;
       services.xserver.xkb = {
         layout = "us";
         variant = "";
