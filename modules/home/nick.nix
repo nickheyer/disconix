@@ -42,7 +42,7 @@
         programs.git = {
           enable = true;
           userName = "nickheyer";
-          email = "nick@heyer.app";
+          userEmail = "nick@heyer.app";
         };
 
         # KITTY
