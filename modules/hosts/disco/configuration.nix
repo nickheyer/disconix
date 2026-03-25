@@ -47,9 +47,9 @@
       };
 
       # DISPLAY MANAGER + GREETER
-      services.xserver.enable = true;
-      services.displayManager.sddm.enable = true;
-      services.displayManager.defaultSession = "niri";
+      #services.xserver.enable = true;
+      #services.displayManager.sddm.enable = true;
+      #services.displayManager.defaultSession = "niri";
       services.xserver.xkb = {
         layout = "us";
         variant = "";
