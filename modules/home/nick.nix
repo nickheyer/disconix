@@ -24,7 +24,9 @@
           enable = true;
           autosuggestion.enable = true;
           syntaxHighlighting.enable = true;
-
+          shellAliases = {
+            rebuild = "sudo nixos-rebuild switch --flake ~/disconix#disco";
+          };
           plugins = [
             {
               name = "powerlevel10k";
@@ -34,7 +36,7 @@
           ];
 
           initContent = ''
-            [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+            source ${./p10k.zsh}
           '';
         };
 

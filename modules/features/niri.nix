@@ -26,7 +26,7 @@
 
           outputs."DP-4" = {
             mode = "1920x1080@144.001";
-            transform = "270";
+            transform = "90";
             position._attrs = { x = 0; y = 0; };
           };
 
