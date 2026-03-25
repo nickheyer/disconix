@@ -30,13 +30,13 @@
           outputs."DP-4" = {
             mode = "1920x1080@144.001";
             transform = "90";
-            position._attrs = { x = 0; y = 0; };
+            position._attrs = { x = 3072; y = 0; };
           };
 
           outputs."DP-5" = {
             mode = "3840x2160@239.998";
             scale = 1.25;
-            position._attrs = { x = 1080; y = 0; };
+            position._attrs = { x = 0; y = 0; };
           };
 
           # LAYOUT

@@ -5,11 +5,11 @@
     let
       greetdeez = pkgs.stdenv.mkDerivation rec {
         pname = "greetdeez";
-        version = "1.0.34";
+        version = "1.0.35";
 
         src = pkgs.fetchurl {
           url = "https://github.com/nickheyer/GreetDeez/releases/download/v${version}/greetdeez_${version}_linux_amd64.tar.gz";
-          hash = "sha256-SyJv9y9gARr/Neh3UC/PAFusxwcZMOAjzrYMofIoEOs=";
+          hash = "sha256-6gSk6DvH6VxoeNubUXInrZ//5fqcWD7Y9UJnFRzabaY=";
         };
 
         sourceRoot = ".";
@@ -47,7 +47,7 @@
 
       environment.etc."greetd/greetdeez.conf".text = ''
         [ui]
-        theme = "cyber"
+        theme = "minimal"
 
         [sessions]
         dirs = [
