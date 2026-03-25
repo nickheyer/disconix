@@ -18,7 +18,7 @@
         settings = {
           spawn-at-startup = [
             (lib.getExe self'.packages.discoNoctalia)
-          ]
+          ];
 	        xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
           input.keyboard = {
             xkb.layout = "us,ua";
