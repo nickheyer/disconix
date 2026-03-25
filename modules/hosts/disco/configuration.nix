@@ -4,27 +4,33 @@
   flake.nixosModules.discoConfiguration =
     { config, pkgs, ... }:
     {
+
+      # NIX MODULES
       imports = [
         self.nixosModules.discoHardware
         self.nixosModules.niri
+        self.nixosModules.nickHome
       ];
 
+      # NIX FLAGS
       nix.settings.experimental-features = [
         "nix-command"
         "flakes"
       ];
 
-
+      # BOOT LOADER
       boot.loader.systemd-boot.enable = true;
       boot.loader.efi.canTouchEfiVariables = true;
-#      boot.loader.grub.enable = true;
-#      boot.loader.grub.device = "/dev/vda";
-#      boot.loader.grub.useOSProber = true;
 
+      # KERNEL
       boot.kernelPackages = pkgs.linuxPackages_latest;
+      
+      # NETWORKING
       networking.hostName = "disco";
       networking.wireless.enable = true;
       networking.networkmanager.enable = true;
+      
+      # LOCALE
       time.timeZone = "America/Los_Angeles";
       i18n.defaultLocale = "en_US.UTF-8";
       i18n.extraLocaleSettings = {
@@ -39,16 +45,19 @@
         LC_TIME = "en_US.UTF-8";
       };
 
-#      services.xserver.enable = true;
-#      services.displayManager.gdm.enable = true;
-#      services.desktopManager.gnome.enable = true;
+      # DISPLAY MANAGER + GREETER
+      services.xserver.enable = true;
+      services.displayManager.sddm.enable = true;
+      services.displayManager.defaultSession = "niri";
       services.xserver.xkb = {
         layout = "us";
         variant = "";
       };
 
+      # PRINTING (CUPS)
       services.printing.enable = true;
 
+      # AUDIO
       services.pulseaudio.enable = false;
       security.rtkit.enable = true;
       services.pipewire = {
@@ -59,6 +68,10 @@
         jack.enable = true;
       };
 
+      # GRAPHICS
+      services.xserver.videoDrivers = [ "nvidia" ];
+
+      # USER CONFIG
       users.users.nick = {
         isNormalUser = true;
         description = "Nicholas Heyer";
@@ -66,6 +79,7 @@
           "networkmanager"
           "wheel"
         ];
+        shell = pkgs.zsh;
         packages = with pkgs; [
           firefox
           vim
@@ -73,22 +87,30 @@
         ];
       };
 
+      # PACKAGES
       programs.firefox.enable = true;
+      programs.zsh.enable = true;
       nixpkgs.config.allowUnfree = true;
-
-      # List packages installed in system profile. To search, run:
-      # $ nix search wget
       environment.systemPackages = with pkgs; [
         git
         vscode-fhs
         wget
-        #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-        #  wget
       ];
 
-      # NixOS release
+      # STEAM (NEEDS 32 BIT LIB INTEGRATION)
+      programs.steam = {
+        enable = true;
+        remotePlay.openFirewall = true;
+      };
+
+      # NIX RELEASE VERSION
       system.stateVersion = "25.11";
 
+      # ENV
+      environment.sessionVariables = {
+        WLR_NO_HARDWARE_CURSORS = "1";
+        NIXOS_OZONE_WL = "1";
+      };
     };
 
 }

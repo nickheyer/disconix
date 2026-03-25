@@ -24,6 +24,18 @@
             xkb.layout = "us,ua";
           };
 
+          outputs."DP-4" = {
+            mode = "1920x1080@144.001";
+            transform = "270";
+            position = { x = 0; y = 0; };
+          };
+
+          outputs."DP-5" = {
+            mode = "3840x2160@60.000";  # temporary until nvidia drivers expose 240Hz
+            scale = 1.25;
+            position = { x = 1080; y = 0; };
+          };
+
           layout.gaps = 5;
 
           binds = {
