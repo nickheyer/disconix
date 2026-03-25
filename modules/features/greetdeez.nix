@@ -3,24 +3,18 @@
   flake.nixosModules.greetdeez =
     { pkgs, lib, ... }:
     let
-      greetdeez = pkgs.buildGoModule rec {
+      greetdeez = pkgs.stdenv.mkDerivation rec {
         pname = "greetdeez";
         version = "1.0.34";
 
-        src = pkgs.fetchFromGitHub {
-          owner = "nickheyer";
-          repo = "GreetDeez";
-          rev = "v${version}";
-          hash = ""; # nix will tell you the correct hash on first build
+        src = pkgs.fetchurl {
+          url = "https://github.com/nickheyer/GreetDeez/releases/download/v${version}/greetdeez_${version}_linux_amd64.tar.gz";
+          hash = "sha256-SyJv9y9gARr/Neh3UC/PAFusxwcZMOAjzrYMofIoEOs=";
         };
 
-        vendorHash = ""; # same — nix will tell you
+        sourceRoot = ".";
 
-        nativeBuildInputs = with pkgs; [
-          pkg-config
-          nodejs
-          makeWrapper
-        ];
+        nativeBuildInputs = [ pkgs.autoPatchelfHook ];
 
         buildInputs = with pkgs; [
           webkitgtk_4_1
@@ -28,23 +22,17 @@
           glib
         ];
 
-        buildPhase = ''
-          runHook preBuild
-          make build
-          runHook postBuild
-        '';
-
         installPhase = ''
-          runHook preInstall
           mkdir -p $out/bin
           cp greetdeez $out/bin/
-          runHook postInstall
+          chmod +x $out/bin/greetdeez
         '';
 
         meta = {
           description = "Hackable display manager greeter for greetd";
           homepage = "https://github.com/nickheyer/GreetDeez";
           license = lib.licenses.mit;
+          platforms = [ "x86_64-linux" ];
         };
       };
     in
@@ -58,8 +46,5 @@
           };
         };
       };
-
-      # greetdeez needs these at runtime
-      environment.systemPackages = [ greetdeez ];
     };
 }
