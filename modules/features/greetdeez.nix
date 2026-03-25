@@ -48,6 +48,12 @@
       environment.etc."greetd/greetdeez.conf".text = ''
         [ui]
         theme = "cyber"
+
+        [sessions]
+        dirs = [
+            { path = "/run/current-system/sw/share/wayland-sessions", type = "wayland" },
+            { path = "/run/current-system/sw/share/xsessions", type = "x11" },
+        ]
       '';
     };
 }
