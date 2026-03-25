@@ -39,12 +39,15 @@
     {
       services.greetd = {
         enable = true;
-        settings = {
-          default_session = {
-            command = "${pkgs.cage}/bin/cage -s -- ${greetdeez}/bin/greetdeez";
-            user = "greeter";
-          };
+        settings.default_session = {
+          command = "${pkgs.cage}/bin/cage -s -- ${greetdeez}/bin/greetdeez";
+          user = "greeter";
         };
       };
+
+      environment.etc."greetd/greetdeez.conf".text = ''
+        [ui]
+        theme = "cyber"
+      '';
     };
 }
