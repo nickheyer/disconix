@@ -11,12 +11,15 @@
     };
 
   perSystem =
-    { pkgs, lib, ... }:
+    { pkgs, lib, self', ... }:
     {
       packages.discoNiri = inputs.wrapper-modules.wrappers.niri.wrap {
         inherit pkgs;
         settings = {
-	  xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
+          spawn-at-startup = [
+            (lib.getExe self'.packages.discoNoctalia)
+          ]
+	        xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
           input.keyboard = {
             xkb.layout = "us,ua";
           };
@@ -24,7 +27,8 @@
           layout.gaps = 5;
 
           binds = {
-            "Mod+T".spawn-sh = lib.getExe pkgs.kitty;
+            "Mod+S".spawn-sh = "${lib.getExe self'.packages.discoNoctalia} ipc call launcher toggle"
+            "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
             "Mod+Q".close-window = null;
           };
         };
