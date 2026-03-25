@@ -10,7 +10,7 @@
         self.nixosModules.discoHardware
         self.nixosModules.niri
         self.nixosModules.nickHome
-        self.nixosModules.greetdeez
+        #self.nixosModules.greetdeez
       ];
 
       # NIX FLAGS
@@ -47,9 +47,9 @@
       };
 
       # DISPLAY MANAGER + GREETER
-      #services.xserver.enable = true;
-      #services.displayManager.sddm.enable = true;
-      #services.displayManager.defaultSession = "niri";
+      services.xserver.enable = true;
+      services.displayManager.sddm.enable = true;
+      services.displayManager.defaultSession = "niri";
       services.xserver.xkb = {
         layout = "us";
         variant = "";
