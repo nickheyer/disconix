@@ -6,7 +6,9 @@
     {
 
       packages.discoNoctalia = inputs.wrapper-modules.wrappers.noctalia-shell.wrap {
-        settings = { };
+        settings =
+          (builtins.fromJSON
+            (builtins.readFile ./noctalia.json)).settings;
       };
     };
 }
