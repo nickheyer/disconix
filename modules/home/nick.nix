@@ -33,7 +33,7 @@
             }
           ];
 
-          initExtra = ''
+          initContent = ''
             [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
           '';
         };
@@ -41,8 +41,8 @@
         # GIT
         programs.git = {
           enable = true;
-          userName = "nickheyer";
-          userEmail = "nick@heyer.app";
+          settings.user.name = "nickheyer";
+          settings.user.email = "nick@heyer.app";
         };
 
         # KITTY
