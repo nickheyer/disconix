@@ -20,6 +20,9 @@
           # START UP DEPS
           spawn-at-startup = [
             (lib.getExe self'.packages.discoNoctalia)
+            "discord --ozone-platform=wayland --enable-features=UseOzonePlatform"
+            (lib.getExe pkgs.firefox)
+            (lib.getExe pkgs.vscode-fhs)
           ];
 	        xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
           input.keyboard = {
@@ -47,6 +50,22 @@
             {
               matches = [{ app-id = "firefox"; title = "Picture-in-Picture"; }];
               open-floating = true;
+            }
+            # STARTUP LAYOUT
+            {
+              matches = [{ app-id = "discord"; at-startup = true; }];
+              open-on-output = "Acer Technologies Acer XF270H 0x7100E343";
+              open-maximized = true;
+            }
+            {
+              matches = [{ app-id = "firefox"; at-startup = true; }];
+              open-on-output = "Microstep MPG321CX OLED Unknown";
+              default-column-width.proportion = 0.5;
+            }
+            {
+              matches = [{ app-id = "code"; at-startup = true; }];
+              open-on-output = "Microstep MPG321CX OLED Unknown";
+              default-column-width.proportion = 0.5;
             }
           ];
 
