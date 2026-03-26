@@ -62,7 +62,7 @@
             # SCREENSHOTS
             "Print".spawn-sh = "${lib.getExe pkgs.grim} - | ${lib.getExe' pkgs.wl-clipboard "wl-copy"}";
             "Mod+Shift+S".spawn-sh = ''${lib.getExe pkgs.grim} -g "$(${lib.getExe pkgs.slurp})" - | ${lib.getExe pkgs.satty} -f -'';
-            "Mod+Print".spawn-sh = "${lib.getExe pkgs.grim} -o \"$(${lib.getExe self'.packages.discoNiri} msg -j outputs | ${lib.getExe pkgs.jq} -r '.[] | select(.is_focused) | .name')\" - | ${lib.getExe' pkgs.wl-clipboard "wl-copy"}";
+            "Mod+Print".spawn-sh = "${lib.getExe pkgs.grim} -o \"$(${lib.getExe pkgs.niri} msg -j outputs | ${lib.getExe pkgs.jq} -r '.[] | select(.is_focused) | .name')\" - | ${lib.getExe' pkgs.wl-clipboard "wl-copy"}";
 
             # SCREEN RECORDING TOGGLE
             "Mod+Shift+R".spawn-sh = "if ${pkgs.procps}/bin/pgrep -x wf-recorder > /dev/null; then ${pkgs.procps}/bin/pkill -x wf-recorder && ${lib.getExe pkgs.libnotify} 'Recording saved'; else ${lib.getExe pkgs.wf-recorder} -f ~/Videos/recording-$(date +%Y%m%d-%H%M%S).mp4 & ${lib.getExe pkgs.libnotify} 'Recording started'; fi";
