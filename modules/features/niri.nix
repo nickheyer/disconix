@@ -61,7 +61,7 @@
 
             # SCREENSHOTS
             "Print".spawn-sh = "${lib.getExe pkgs.grim} - | ${lib.getExe' pkgs.wl-clipboard "wl-copy"}";
-            "Mod+Shift+S".spawn-sh = ''${lib.getExe pkgs.grim} -g "$(${lib.getExe pkgs.slurp})" - | ${lib.getExe pkgs.satty} -f -'';
+            "Mod+Shift+S".spawn-sh = ''${lib.getExe pkgs.grim} -g $(${lib.getExe pkgs.slurp}) - | ${lib.getExe pkgs.satty} -f -'';
             "Mod+Print".spawn-sh = "${lib.getExe pkgs.grim} -o $(${lib.getExe pkgs.niri} msg -j outputs | ${lib.getExe pkgs.jq} -r '.[] | select(.is_focused) | .name') - | ${lib.getExe' pkgs.wl-clipboard "wl-copy"}";
 
             # SCREEN RECORDING TOGGLE
