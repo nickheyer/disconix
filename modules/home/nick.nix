@@ -17,6 +17,27 @@
           claude-code
           kitty
           meslo-lgs-nf
+
+          # SCREENSHOT + RECORDING
+          grim
+          slurp
+          satty
+          wf-recorder
+          wl-clipboard
+
+          # MEDIA + AUDIO
+          mpv
+          playerctl
+          pavucontrol
+          cava
+
+          # RICE
+          fastfetch
+          btop
+          swaylock
+          hyprpicker
+          cliphist
+          libnotify
         ];
 
         # ZSH
@@ -26,6 +47,7 @@
           syntaxHighlighting.enable = true;
           shellAliases = {
             rebuild = "sudo nixos-rebuild switch --flake ~/disconix#disco";
+            ff = "fastfetch";
           };
           plugins = [
             {
@@ -52,6 +74,16 @@
           enable = true;
           enableZshIntegration = true;
           shellWrapperName = "y";
+        };
+
+        # MPV
+        programs.mpv = {
+          enable = true;
+          config = {
+            gpu-api = "vulkan";
+            hwdec = "auto-safe";
+            vo = "gpu-next";
+          };
         };
 
         # KITTY

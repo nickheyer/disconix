@@ -338,7 +338,7 @@
       "pinnedApps": [],
       "useApp2Unit": false,
       "sortByMostUsed": true,
-      "terminalCommand": "alacritty -e",
+      "terminalCommand": "kitty -e",
       "customLaunchPrefixEnabled": false,
       "customLaunchPrefix": "",
       "viewMode": "list",
@@ -349,7 +349,7 @@
       "enableWindowsSearch": true,
       "enableSessionSearch": true,
       "ignoreMouseInput": false,
-      "screenshotAnnotationTool": "",
+      "screenshotAnnotationTool": "satty",
       "overviewLayer": false,
       "density": "default"
     },

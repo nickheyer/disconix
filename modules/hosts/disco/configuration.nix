@@ -97,13 +97,21 @@
         git
         vscode-fhs
         wget
+        obs-studio
+        mangohud
+        lutris
+        protonup-qt
       ];
 
       # STEAM (NEEDS 32 BIT LIB INTEGRATION)
       programs.steam = {
         enable = true;
         remotePlay.openFirewall = true;
+        gamescopeSession.enable = true;
       };
+
+      # GAMING PERFORMANCE
+      programs.gamemode.enable = true;
 
       # NIX RELEASE VERSION
       system.stateVersion = "25.11";
