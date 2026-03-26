@@ -25,6 +25,18 @@
 	      options = [ "fmask=0077" "dmask=0077" ];
 	    };
 
+	  fileSystems."/mnt/primary" =
+	    { device = "/dev/disk/by-uuid/5c71721f-5c0f-4fc4-a440-b0982fd6fe23";
+	      fsType = "ext4";
+	      options = [ "noauto" "x-systemd.automount" "x-systemd.idle-timeout=300" ];
+	    };
+
+	  fileSystems."/mnt/secondary" =
+	    { device = "/dev/disk/by-uuid/e4856135-703e-4fee-8dbd-8f22f88ca8da";
+	      fsType = "ext4";
+	      options = [ "noauto" "x-systemd.automount" "x-systemd.idle-timeout=300" ];
+	    };
+
 	  swapDevices = [ ];
 
 	  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

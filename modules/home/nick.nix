@@ -176,6 +176,12 @@
           };
         };
 
+        # BOOKMARKS (THUNAR SIDEBAR)
+        gtk.gtk3.bookmarks = [
+          "file:///mnt/primary Primary"
+          "file:///mnt/secondary Secondary"
+        ];
+
         # DESKTOP OVERRIDES
         xdg.desktopEntries.discord = {
           name = "Discord";
