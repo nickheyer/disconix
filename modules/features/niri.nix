@@ -20,7 +20,7 @@
           # START UP DEPS
           spawn-at-startup = [
             (lib.getExe self'.packages.discoNoctalia)
-            "discord --ozone-platform=wayland --enable-features=UseOzonePlatform"
+            "discord"
             (lib.getExe pkgs.firefox)
             "code"
           ];

@@ -18,13 +18,7 @@
           claude-code
           kitty
           meslo-lgs-nf
-
-          # SCREENSHOT + RECORDING
-          grim
-          slurp
           satty
-          wf-recorder
-          wl-clipboard
 
           # MEDIA + AUDIO
           mpv
