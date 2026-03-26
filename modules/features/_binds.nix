@@ -5,7 +5,8 @@
   "Mod+S".spawn-sh = "${lib.getExe self'.packages.discoNoctalia} ipc call launcher toggle";
   "Mod+T".spawn-sh = lib.getExe pkgs.kitty;
   "Mod+Return".fullscreen-window = null;
-  "Mod+E".spawn-sh = "${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}";
+  "Mod+C".spawn-sh = lib.getExe pkgs.thunar;
+  "Mod+Shift+C".spawn-sh = "${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}";
   "Mod+Q".close-window = null;
   "Mod+F".spawn-sh = lib.getExe pkgs.firefox;
 
@@ -19,9 +20,6 @@
 
   # LOCK SCREEN
   "Mod+L".spawn-sh = lib.getExe pkgs.swaylock;
-
-  # KEYBOARD LAYOUT
-  "Mod+Space".switch-layout = "next";
 
   # OVERVIEW
   "Mod+O".toggle-overview = null;

@@ -27,13 +27,13 @@
           };
 
           # DISPLAY ORIENTIATION + RESOLUTION + REFRESH
-          outputs."DP-4" = {
+          outputs."Acer Technologies Acer XF270H 0x7100E343" = {
             mode = "1920x1080@144.001";
             transform = "90";
             position._attrs = { x = 3072; y = 0; };
           };
 
-          outputs."DP-5" = {
+          outputs."Microstep MPG321CX OLED Unknown" = {
             mode = "3840x2160@239.998";
             scale = 1.25;
             position._attrs = { x = 0; y = 0; };
