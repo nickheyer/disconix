@@ -92,11 +92,11 @@
           settings = {
             # FONT
             font_family = "MesloLGS Nerd Font";
-            font_size = 11;
+            font_size = 12;
             disable_ligatures = "never";
 
             # WINDOW
-            background_opacity = "0.85";
+            background_opacity = "0.75";
             window_padding_width = 12;
             placement_strategy = "center";
             hide_window_decorations = "yes";
