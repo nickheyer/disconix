@@ -16,7 +16,7 @@
           discord
           claude-code
           kitty
-          nautilus
+          thunar
           meslo-lgs-nf
         ];
 
@@ -46,6 +46,12 @@
           enable = true;
           settings.user.name = "nickheyer";
           settings.user.email = "nick@heyer.app";
+        };
+
+        # YAZI
+        programs.yazi = {
+          enable = true;
+          enableZshIntegration = true;
         };
 
         # KITTY
