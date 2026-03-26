@@ -92,7 +92,7 @@
           enable = true;
           settings = {
             # FONT
-            font_family = "MesloLGS Nerd Font";
+            font_family = "MesloLGS NF";
             font_size = 12;
             disable_ligatures = "never";
 
@@ -172,7 +172,7 @@
         programs.vscode = {
           enable = true;
           profiles.default.userSettings = {
-            "terminal.integrated.fontFamily" = "MesloLGS Nerd Font";
+            "terminal.integrated.fontFamily" = "MesloLGS NF";
           };
         };
 
