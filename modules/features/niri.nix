@@ -50,7 +50,7 @@
             }
           ];
 
-          binds = import ./binds.nix { inherit pkgs lib self'; };
+          binds = import ./_binds.nix { inherit pkgs lib self'; };
         };
 
       };

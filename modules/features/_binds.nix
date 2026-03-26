@@ -14,9 +14,6 @@
   "Mod+Shift+S".spawn-sh = ''${lib.getExe pkgs.grim} -g $(${lib.getExe pkgs.slurp}) - | ${lib.getExe pkgs.satty} -f -'';
   "Mod+Print".spawn-sh = "${lib.getExe pkgs.grim} -o $(${lib.getExe pkgs.niri} msg -j outputs | ${lib.getExe pkgs.jq} -r '.[] | select(.is_focused) | .name') - | ${lib.getExe' pkgs.wl-clipboard "wl-copy"}";
 
-  # SCREEN RECORDING TOGGLE
-  "Mod+Shift+R".spawn-sh = "PIDFILE=/tmp/wf-recorder.pid; if [ -f \"$PIDFILE\" ] && kill -0 $(cat \"$PIDFILE\") 2>/dev/null; then kill $(cat \"$PIDFILE\"); rm -f \"$PIDFILE\"; ${lib.getExe pkgs.libnotify} 'Recording saved'; else ${lib.getExe pkgs.wf-recorder} -f ~/Videos/recording-$(date +%Y%m%d-%H%M%S).mp4 & echo $! > \"$PIDFILE\"; ${lib.getExe pkgs.libnotify} 'Recording started'; fi";
-
   # COLOR PICKER
   "Mod+Shift+P".spawn-sh = "${lib.getExe pkgs.hyprpicker} -a -n";
 
@@ -24,7 +21,7 @@
   "Mod+L".spawn-sh = lib.getExe pkgs.swaylock;
 
   # KEYBOARD LAYOUT
-  "Mod+Space".switch-layout = null;
+  "Mod+Space".switch-layout = "next";
 
   # OVERVIEW
   "Mod+O".toggle-overview = null;
@@ -68,8 +65,8 @@
   "Mod+W".toggle-column-tabbed-display = null;
 
   # WORKSPACES
-  "Mod+Shift+PageDown".move-column-to-workspace-down = null;
-  "Mod+Shift+PageUp".move-column-to-workspace-up = null;
+  "Mod+Shift+Page_Down".move-column-to-workspace-down = null;
+  "Mod+Shift+Page_Up".move-column-to-workspace-up = null;
 
   # MEDIA KEYS
   "XF86AudioRaiseVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
