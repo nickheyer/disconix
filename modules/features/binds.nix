@@ -1,4 +1,4 @@
-{ pkgs, lib, self' }:
+{ pkgs, lib, self', ... }:
 {
   # APP LAUNCHERS
   "Mod+Slash".show-hotkey-overlay = null;
