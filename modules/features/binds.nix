@@ -37,7 +37,6 @@
 
   # FOCUS WINDOWS WITHIN A COLUMN
   "Mod+Up".focus-window-or-workspace-up = null;
-  "Mod+Down".focus-window-or-workspace-down = null;
   "Mod+Tab".focus-window-previous = null;
 
   # MOVE COLUMNS
