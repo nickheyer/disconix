@@ -167,6 +167,7 @@
           enable = true;
           profiles.default.userSettings = {
             "terminal.integrated.fontFamily" = "MesloLGS NF";
+            "git.confirmSync" = false;
           };
         };
 
