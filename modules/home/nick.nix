@@ -167,6 +167,14 @@
           };
         };
 
+        # VSCODE
+        programs.vscode = {
+          enable = true;
+          profiles.default.userSettings = {
+            "terminal.integrated.fontFamily" = "MesloLGS Nerd Font";
+          };
+        };
+
         # DESKTOP OVERRIDES
         xdg.desktopEntries.discord = {
           name = "Discord";
