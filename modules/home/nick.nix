@@ -16,6 +16,7 @@
           discord
           claude-code
           kitty
+          nautilus
           meslo-lgs-nf
         ];
 
