@@ -69,8 +69,6 @@
   "Mod+W".toggle-column-tabbed-display = null;
 
   # WORKSPACES
-  "Mod+PageDown".focus-workspace-down = null;
-  "Mod+PageUp".focus-workspace-up = null;
   "Mod+Shift+PageDown".move-column-to-workspace-down = null;
   "Mod+Shift+PageUp".move-column-to-workspace-up = null;
 
