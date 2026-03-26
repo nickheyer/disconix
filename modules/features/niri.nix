@@ -22,7 +22,7 @@
             (lib.getExe self'.packages.discoNoctalia)
             "discord --ozone-platform=wayland --enable-features=UseOzonePlatform"
             (lib.getExe pkgs.firefox)
-            (lib.getExe pkgs.vscode-fhs)
+            "code"
           ];
 	        xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
           input.keyboard = {
