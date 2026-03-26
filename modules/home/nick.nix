@@ -16,7 +16,6 @@
           discord
           claude-code
           kitty
-          thunar
           meslo-lgs-nf
         ];
 

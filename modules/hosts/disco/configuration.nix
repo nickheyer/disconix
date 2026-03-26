@@ -9,6 +9,7 @@
       imports = [
         self.nixosModules.discoHardware
         self.nixosModules.niri
+        self.nixosModules.thunar
         self.nixosModules.nickHome
         #self.nixosModules.greetdeez
       ];
