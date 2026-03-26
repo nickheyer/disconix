@@ -16,7 +16,9 @@
       packages.discoNiri = inputs.wrapper-modules.wrappers.niri.wrap {
         inherit pkgs;
         settings = {
-          
+
+          hotkey-overlay.skip-at-startup = true;
+
           # START UP DEPS
           spawn-at-startup = [
             (lib.getExe self'.packages.discoNoctalia)
