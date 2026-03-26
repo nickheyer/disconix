@@ -29,22 +29,22 @@
   # OVERVIEW
   "Mod+O".toggle-overview = null;
 
-  # NAVIGATION (seamless across monitors)
+  # NAVIGATION
   "Mod+Left".focus-column-or-monitor-left = null;
   "Mod+Right".focus-column-or-monitor-right = null;
   "Mod+Home".focus-column-first = null;
   "Mod+End".focus-column-last = null;
 
-  # FOCUS WINDOWS WITHIN A COLUMN (seamless across workspaces)
+  # FOCUS WINDOWS WITHIN A COLUMN
   "Mod+Up".focus-window-or-workspace-up = null;
   "Mod+Down".focus-window-or-workspace-down = null;
   "Mod+Tab".focus-window-previous = null;
 
-  # MOVE COLUMNS (seamless across monitors)
+  # MOVE COLUMNS
   "Mod+Shift+Left".move-column-left-or-to-monitor-left = null;
   "Mod+Shift+Right".move-column-right-or-to-monitor-right = null;
 
-  # MOVE WINDOWS WITHIN A COLUMN (seamless across workspaces)
+  # MOVE WINDOWS WITHIN A COLUMN
   "Mod+Shift+Up".move-window-up-or-to-workspace-up = null;
   "Mod+Shift+Down".move-window-down-or-to-workspace-down = null;
 
@@ -67,12 +67,6 @@
 
   # TABBED DISPLAY
   "Mod+W".toggle-column-tabbed-display = null;
-
-  # MONITORS (explicit)
-  "Mod+Comma".focus-monitor-left = null;
-  "Mod+Period".focus-monitor-right = null;
-  "Mod+Shift+Comma".move-column-to-monitor-left = null;
-  "Mod+Shift+Period".move-column-to-monitor-right = null;
 
   # WORKSPACES
   "Mod+PageDown".focus-workspace-down = null;
