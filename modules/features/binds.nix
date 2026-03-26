@@ -48,10 +48,6 @@
   "Mod+Shift+Up".move-window-up-or-to-workspace-up = null;
   "Mod+Shift+Down".move-window-down-or-to-workspace-down = null;
 
-  # COLUMN COMPOSITION
-  "Mod+BracketLeft".consume-or-expel-window-left = null;
-  "Mod+BracketRight".consume-or-expel-window-right = null;
-
   # COLUMN WIDTH
   "Mod+R".switch-preset-column-width = null;
   "Mod+Minus".set-column-width = "-10%";
@@ -64,7 +60,6 @@
 
   # MAXIMIZE & CENTER
   "Mod+M".maximize-column = null;
-  "Mod+C".center-column = null;
 
   # FLOATING
   "Mod+V".toggle-window-floating = null;
