@@ -42,6 +42,14 @@
           # LAYOUT
           layout.gaps = 5;
 
+          # WINDOW RULES
+          window-rules = [
+            {
+              matches = [{ app-id = "firefox"; title = "Picture-in-Picture"; }];
+              open-floating = true;
+            }
+          ];
+
           # KEYBINDS
           binds = {
             # APP LAUNCHERS
