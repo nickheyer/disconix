@@ -177,6 +177,7 @@
             "terminal.integrated.fontFamily" = "MesloLGS NF";
             "git.confirmSync" = false;
             "security.workspace.trust.untrustedFiles" = "open";
+            "chat.agent.enabled" = false;
           };
         };
 
