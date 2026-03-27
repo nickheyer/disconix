@@ -1,8 +1,14 @@
 { ... }:
 {
-  perSystem = { pkgs, ... }: {
-    devShells.default = pkgs.mkShell {
-      packages = with pkgs; [
+  flake.nixosModules.devtools =
+    { pkgs, ... }:
+    {
+      # DOCKER
+      virtualisation.docker.enable = true;
+      users.users.nick.extraGroups = [ "docker" ];
+
+      # DEV TOOLS
+      environment.systemPackages = with pkgs; [
         # GO
         go
         gopls
@@ -23,13 +29,5 @@
         jdk17
         jdk21
       ];
-    };
-  };
-
-  flake.nixosModules.devtools =
-    { ... }:
-    {
-      virtualisation.docker.enable = true;
-      users.users.nick.extraGroups = [ "docker" ];
     };
 }
