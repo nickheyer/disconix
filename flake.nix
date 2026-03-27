@@ -7,6 +7,8 @@
 
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
 
+    greetdeez.url = "github:nickheyer/GreetDeez";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
