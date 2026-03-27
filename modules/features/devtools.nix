@@ -41,16 +41,7 @@
       ];
 
       # PKGCFG
-      environment.variables.PKG_CONFIG_PATH = lib.makeSearchPath "lib/pkgconfig" [
-        pkgs.gtk3.dev
-        pkgs.webkitgtk_4_1.dev
-        pkgs.glib.dev
-        pkgs.cairo.dev
-        pkgs.pango.dev
-        pkgs.gdk-pixbuf.dev
-        pkgs.atk.dev
-        pkgs.harfbuzz.dev
-        pkgs.libsoup_3.dev
-      ];
+      environment.pathsToLink = [ "/lib/pkgconfig" "/share/pkgconfig" ];
+      environment.extraOutputsToInstall = [ "dev" ];
     };
 }
