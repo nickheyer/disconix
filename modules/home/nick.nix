@@ -63,9 +63,6 @@
 
           initContent = ''
             source ${./p10k.zsh}
-          '';
-
-          initExtra = ''
             shpkg() { nix shell nixpkgs#"$@"; }
             runpkg() { nix run nixpkgs#"$@"; }
           '';
