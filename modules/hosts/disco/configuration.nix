@@ -50,6 +50,16 @@
       # DISPLAY MANAGER + GREETER
       services.xserver.enable = true;
       services.displayManager.sddm.enable = true;
+      services.displayManager.sddm.setupScript = let
+        xrandr = "${pkgs.xrandr}/bin/xrandr";
+        grep = "${pkgs.gnugrep}/bin/grep";
+        cut = "${pkgs.coreutils}/bin/cut";
+      in ''
+        # Disable secondary monitor (Acer XF270H 27") to prevent duplicate/misrotated login screen
+        for out in $(${xrandr} --query | ${grep} ' connected' | ${grep} '600mm x 340mm' | ${cut} -d' ' -f1); do
+          ${xrandr} --output "$out" --off
+        done
+      '';
       services.displayManager.defaultSession = "niri";
       services.xserver.xkb = {
         layout = "us";
