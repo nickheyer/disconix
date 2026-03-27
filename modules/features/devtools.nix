@@ -33,6 +33,9 @@
         buf
         protoc-gen-go
         protoc-gen-es
+
+        # MISC SYS UTILS
+        pkg-config
       ];
     };
 }
