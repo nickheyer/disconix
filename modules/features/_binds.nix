@@ -5,7 +5,8 @@
   "Mod+S".spawn-sh = "${lib.getExe self'.packages.discoNoctalia} ipc call launcher toggle";
   "Mod+T".spawn-sh = lib.getExe pkgs.kitty;
   "Mod+Return".fullscreen-window = null;
-  "Mod+C".spawn-sh = lib.getExe pkgs.thunar;
+  "Mod+G".spawn-sh = lib.getExe pkgs.thunar;
+  "Mod+C".spawn-sh = lib.getExe pkgs.vscode-fhs;
   "Mod+Shift+C".spawn-sh = "${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}";
   "Mod+Q".close-window = null;
   "Mod+F".spawn-sh = lib.getExe pkgs.firefox;
