@@ -18,6 +18,8 @@
           claude-code
           kitty
           meslo-lgs-nf
+          maple-mono.NF
+          nerd-fonts.jetbrains-mono
           satty
 
           # MEDIA + AUDIO
@@ -188,11 +190,85 @@
         programs.vscode = {
           enable = true;
           profiles.default.userSettings = {
-            "terminal.integrated.fontFamily" = "MesloLGS NF";
-            "git.confirmSync" = false;
-            "security.workspace.trust.untrustedFiles" = "open";
-            "chat.agent.enabled" = false;
+            "editor.fontSize" = 12;
+            "editor.fontFamily" = "'Maple Mono', 'monospace', monospace, 'JetBrainsMono Nerd Font'";
+            "editor.scrollbar.vertical" = "visible";
+            "editor.scrollbar.verticalScrollbarSize" = 12;
+            "editor.scrollbar.horizontal" = "visible";
+            "editor.minimap.enabled" = false;
+            "editor.hover.delay" = 700;
+            "editor.unicodeHighlight.nonBasicASCII" = false;
+            "editor.largeFileOptimizations" = false;
             "explorer.confirmDelete" = false;
+            "explorer.confirmDragAndDrop" = false;
+            "explorer.confirmPasteNative" = false;
+            "explorer.fileNesting.patterns" = {
+              "*.ts" = "\${capture}.js";
+              "*.js" = "\${capture}.js.map, \${capture}.min.js, \${capture}.d.ts";
+              "*.jsx" = "\${capture}.js";
+              "*.tsx" = "\${capture}.ts";
+              "tsconfig.json" = "tsconfig.*.json";
+              "package.json" = "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock";
+              "Cargo.toml" = "Cargo.lock";
+              "*.sqlite" = "\${capture}.\${extname}-*";
+              "*.db" = "\${capture}.\${extname}-*";
+              "*.sqlite3" = "\${capture}.\${extname}-*";
+              "*.db3" = "\${capture}.\${extname}-*";
+              "*.sdb" = "\${capture}.\${extname}-*";
+              "*.s3db" = "\${capture}.\${extname}-*";
+            };
+            "git.autofetch" = true;
+            "git.confirmSync" = false;
+            "git.openRepositoryInParentFolders" = "never";
+            "git.ignoreRebaseWarning" = true;
+            "terminal.integrated.fontFamily" = "MesloLGS NF";
+            "terminal.integrated.enableMultiLinePasteWarning" = "never";
+            "terminal.external.linuxExec" = "kitty";
+            "terminal.explorerKind" = "both";
+            "terminal.sourceControlRepositoriesKind" = "both";
+            "security.workspace.trust.untrustedFiles" = "open";
+            "security.workspace.trust.startupPrompt" = "never";
+            "security.workspace.trust.enabled" = false;
+            "workbench.editor.empty.hint" = "hidden";
+            "workbench.secondarySideBar.defaultVisibility" = "hidden";
+            "workbench.statusBar.visible" = false;
+            "workbench.editorAssociations" = {
+              "*.wav" = "vscode.audioPreview";
+            };
+            "window.titleBarStyle" = "custom";
+            "chat.agent.enabled" = false;
+            "telemetry.telemetryLevel" = "off";
+            "redhat.telemetry.enabled" = false;
+            "diffEditor.ignoreTrimWhitespace" = false;
+            "makefile.configureOnOpen" = true;
+            "go.toolsManagement.autoUpdate" = true;
+            "zig.zls.enabled" = "on";
+            "svelte.enable-ts-plugin" = true;
+            "svelte.plugin.svelte.compilerWarnings" = {
+              "a11y-aria-attributes" = "ignore";
+              "a11y-incorrect-aria-attribute-type" = "ignore";
+              "a11y-unknown-aria-attribute" = "ignore";
+              "a11y-hidden" = "ignore";
+              "a11y-misplaced-role" = "ignore";
+              "a11y-unknown-role" = "ignore";
+              "a11y-no-abstract-role" = "ignore";
+              "a11y-no-redundant-roles" = "ignore";
+              "a11y-role-has-required-aria-props" = "ignore";
+              "a11y-accesskey" = "ignore";
+              "a11y-autofocus" = "ignore";
+              "a11y-misplaced-scope" = "ignore";
+              "a11y-positive-tabindex" = "ignore";
+              "a11y-invalid-attribute" = "ignore";
+              "a11y-missing-attribute" = "ignore";
+              "a11y-img-redundant-alt" = "ignore";
+              "a11y-label-has-associated-control" = "ignore";
+              "a11y-media-has-caption" = "ignore";
+              "a11y-distracting-elements" = "ignore";
+              "a11y-structure" = "ignore";
+              "a11y-mouse-events-have-key-events" = "ignore";
+              "a11y-missing-content" = "ignore";
+              "a11y-no-static-element-interactions" = "ignore";
+            };
           };
         };
 
