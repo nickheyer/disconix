@@ -35,6 +35,9 @@
           libnotify
         ];
 
+        # PATH
+        home.sessionPath = "$HOME/go/bin";
+
         # NIRI
         home.pointerCursor = {
           name = "catppuccin-mocha-dark-cursors";
@@ -59,6 +62,9 @@
               src = pkgs.zsh-powerlevel10k;
               file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
             }
+          ];
+          path = [
+
           ];
 
           initContent = ''
