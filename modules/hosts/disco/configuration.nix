@@ -56,6 +56,8 @@
         cut = "${pkgs.coreutils}/bin/cut";
       in ''
         # Disable secondary monitor (Acer XF270H 27") to prevent duplicate/misrotated login screen
+        # Debug: log xrandr output so we can verify what SDDM's X server sees
+        ${xrandr} --query > /tmp/sddm-xrandr.log 2>&1
         for out in $(${xrandr} --query | ${grep} ' connected' | ${grep} '600mm x 340mm' | ${cut} -d' ' -f1); do
           ${xrandr} --output "$out" --off
         done
