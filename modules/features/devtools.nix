@@ -28,6 +28,9 @@
         # JAVA
         jdk17
         jdk21
+
+        # PROTO
+        buf
       ];
     };
 }
