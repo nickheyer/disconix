@@ -55,7 +55,6 @@
           syntaxHighlighting.enable = true;
           shellAliases = {
             rebuild = "sudo nixos-rebuild switch --flake ~/disconix#disco";
-            search = "nix search nixpkgs --json | less";
             ff = "fastfetch";
           };
           plugins = [
@@ -68,6 +67,7 @@
 
           initContent = ''
             source ${./p10k.zsh}
+            search() { nix search nixpkgs "$@" | less }
             shpkg() { nix shell nixpkgs#"$@"; }
             runpkg() { nix run nixpkgs#"$@"; }
           '';

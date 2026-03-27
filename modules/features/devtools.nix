@@ -31,6 +31,8 @@
 
         # PROTO
         buf
+        protoc-gen-go
+        protoc-gen-es
       ];
     };
 }
