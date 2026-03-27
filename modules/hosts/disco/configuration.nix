@@ -9,6 +9,7 @@
       imports = [
         self.nixosModules.discoHardware
         self.nixosModules.niri
+        self.nixosModules.greeter
         self.nixosModules.thunar
         self.nixosModules.nickHome
         #self.nixosModules.greetdeez
@@ -45,27 +46,6 @@
         LC_PAPER = "en_US.UTF-8";
         LC_TELEPHONE = "en_US.UTF-8";
         LC_TIME = "en_US.UTF-8";
-      };
-
-      # DISPLAY MANAGER + GREETER
-      services.xserver.enable = true;
-      services.displayManager.sddm.enable = true;
-      services.displayManager.sddm.setupScript = let
-        xrandr = "${pkgs.xrandr}/bin/xrandr";
-        grep = "${pkgs.gnugrep}/bin/grep";
-        cut = "${pkgs.coreutils}/bin/cut";
-      in ''
-        # Disable secondary monitor (Acer XF270H 27") to prevent duplicate/misrotated login screen
-        # Debug: log xrandr output so we can verify what SDDM's X server sees
-        ${xrandr} --query > /tmp/sddm-xrandr.log 2>&1
-        for out in $(${xrandr} --query | ${grep} ' connected' | ${grep} '600mm x 340mm' | ${cut} -d' ' -f1); do
-          ${xrandr} --output "$out" --off
-        done
-      '';
-      services.displayManager.defaultSession = "niri";
-      services.xserver.xkb = {
-        layout = "us";
-        variant = "";
       };
 
       # PRINTING (CUPS)

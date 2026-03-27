@@ -176,6 +176,7 @@
           profiles.default.userSettings = {
             "terminal.integrated.fontFamily" = "MesloLGS NF";
             "git.confirmSync" = false;
+            "security.workspace.trust.untrustedFiles" = "open";
           };
         };
 
