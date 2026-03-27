@@ -21,10 +21,14 @@
         "nix-command"
         "flakes"
       ];
+      nix.gc.automatic = true;
+      nix.gc.dates = "weekly";
+      nix.gc.options = "--delete-older-than 30d";
 
       # BOOT LOADER
       boot.loader.systemd-boot.enable = true;
       boot.loader.efi.canTouchEfiVariables = true;
+      boot.loader.systemd-boot.configurationLimit = 3;
 
       # KERNEL
       boot.kernelPackages = pkgs.linuxPackages_latest;
