@@ -4,7 +4,7 @@
   flake.nixosModules.greeter =
     { pkgs, ... }:
     let
-      greetdeez = inputs.nickpkgs.packages.${pkgs.system}.greetdeez;
+      greetdeez = inputs.nickpkgs.packages.${pkgs.stdenv.hostPlatform.system}.greetdeez;
     in
     {
       services.greetd = {
