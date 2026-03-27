@@ -50,6 +50,7 @@
         pkgs.gdk-pixbuf.dev
         pkgs.atk.dev
         pkgs.harfbuzz.dev
+        pkgs.libsoup_3.dev
       ];
     };
 }
