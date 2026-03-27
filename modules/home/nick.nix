@@ -48,6 +48,12 @@
           gtk.enable = true;
         };
 
+        # DIRENV AUTOSHELL
+        programs.direnv = {
+          enable = true;
+          nix-direnv.enable = true;
+        };
+
         # ZSH
         programs.zsh = {
           enable = true;
