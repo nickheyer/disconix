@@ -12,6 +12,7 @@
         self.nixosModules.greeter
         self.nixosModules.thunar
         self.nixosModules.nickHome
+        self.nixosModules.devtools
         #self.nixosModules.greetdeez
       ];
 
