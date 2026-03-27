@@ -3,10 +3,23 @@
 
   flake.nixosModules.greeter =
     { pkgs, ... }:
+    let
+      greetdeez = inputs.nickpkgs.packages.${pkgs.system}.greetdeez;
+    in
     {
-      imports = [ inputs.greetdeez.nixosModules.default ];
+      services.greetd = {
+        enable = true;
+        settings.default_session = {
+          command = "${pkgs.cage}/bin/cage -s -m last -- ${greetdeez}/bin/greetdeez";
+          user = "greetdeez";
+        };
+      };
 
-      services.greetdeez.enable = true;
+      users.users.greetdeez = {
+        isSystemUser = true;
+        group = "greetdeez";
+      };
+      users.groups.greetdeez = {};
     };
 
 }

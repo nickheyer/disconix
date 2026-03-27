@@ -7,7 +7,7 @@
 
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
 
-    greetdeez.url = "github:nickheyer/GreetDeez";
+    nickpkgs.url = "github:nickheyer/nixpkg";
 
     home-manager = {
       url = "github:nix-community/home-manager";
