@@ -36,6 +36,8 @@
 
         # MISC SYS UTILS
         pkg-config
+        gtk3
+        webkitgtk_4_1
       ];
     };
 }
