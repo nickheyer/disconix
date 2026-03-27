@@ -23,11 +23,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1774595799,
-        "narHash": "sha256-EneSfYBLzYIb9Ugo2DCNwKGj+edJ7veI8awTwUtxUkQ=",
+        "lastModified": 1774595974,
+        "narHash": "sha256-lAf/+PXpdVJFHZ3i2kwttfh9GKcP6b818G0J9HCViVA=",
         "owner": "nickheyer",
         "repo": "GreetDeez",
-        "rev": "b5d3263337e131eb31906aaf2b3e776511562a1d",
+        "rev": "1324f1f0c46ef9329c9cf45b6add590bf54db411",
         "type": "github"
       },
       "original": {
