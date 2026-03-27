@@ -36,7 +36,9 @@
         ];
 
         # PATH
-        home.sessionPath = "$HOME/go/bin";
+        home.sessionPath = [
+          "$HOME/go/bin"
+        ];
 
         # NIRI
         home.pointerCursor = {
@@ -62,9 +64,6 @@
               src = pkgs.zsh-powerlevel10k;
               file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
             }
-          ];
-          path = [
-
           ];
 
           initContent = ''
