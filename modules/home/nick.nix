@@ -186,6 +186,7 @@
             "git.confirmSync" = false;
             "security.workspace.trust.untrustedFiles" = "open";
             "chat.agent.enabled" = false;
+            "explorer.confirmDelete" = false;
           };
         };
 
