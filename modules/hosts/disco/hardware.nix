@@ -37,6 +37,24 @@
 	      options = [ "noauto" "x-systemd.automount" "x-systemd.idle-timeout=300" ];
 	    };
 
+	  fileSystems."/mnt/backups" =
+	    { device = "192.168.1.184:/mnt/user/backups";
+	      fsType = "nfs";
+	      options = [ "defaults" "_netdev" ];
+	    };
+
+	  fileSystems."/mnt/media" =
+	    { device = "192.168.1.184:/mnt/user/Media";
+	      fsType = "nfs";
+	      options = [ "defaults" "_netdev" ];
+	    };
+
+	  fileSystems."/mnt/isos" =
+	    { device = "192.168.1.184:/mnt/user/isos";
+	      fsType = "nfs";
+	      options = [ "defaults" "_netdev" ];
+	    };
+
 	  swapDevices = [ ];
 
 	  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
