@@ -223,6 +223,8 @@
             "git.ignoreRebaseWarning" = true;
             "terminal.integrated.fontFamily" = "MesloLGS NF";
             "terminal.integrated.enableMultiLinePasteWarning" = "never";
+            "terminal.integrated.hoveredLinkActivationModifier" = "";
+            "terminal.integrated.showLinkHover" = false;
             "terminal.external.linuxExec" = "kitty";
             "terminal.explorerKind" = "both";
             "terminal.sourceControlRepositoriesKind" = "both";
@@ -237,6 +239,7 @@
             };
             "window.titleBarStyle" = "custom";
             "chat.agent.enabled" = false;
+            "update.mode" = "none";
             "telemetry.telemetryLevel" = "off";
             "redhat.telemetry.enabled" = false;
             "diffEditor.ignoreTrimWhitespace" = false;
