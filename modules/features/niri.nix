@@ -22,7 +22,7 @@
           # START UP DEPS
           spawn-at-startup = [
             (lib.getExe self'.packages.discoNoctalia)
-            "discord"
+            (lib.getExe pkgs.vesktop)
             (lib.getExe pkgs.firefox)
             "code"
           ];
@@ -55,7 +55,7 @@
             }
             # STARTUP LAYOUT
             {
-              matches = [{ app-id = "discord"; at-startup = true; }];
+              matches = [{ app-id = "vesktop"; at-startup = true; }];
               open-on-output = "Acer Technologies Acer XF270H 0x7100E343";
               open-maximized = true;
             }

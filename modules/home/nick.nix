@@ -14,7 +14,7 @@
 
         # PACKAGES
         home.packages = with pkgs; [
-          discord
+          vesktop
           claude-code
           kitty
           meslo-lgs-nf
@@ -278,13 +278,6 @@
           "file:///mnt/secondary Secondary"
         ];
 
-        # DESKTOP OVERRIDES
-        xdg.desktopEntries.discord = {
-          name = "Discord";
-          exec = "discord --ozone-platform=wayland --enable-features=UseOzonePlatform";
-          icon = "discord";
-          type = "Application";
-        };
       };
     };
 }

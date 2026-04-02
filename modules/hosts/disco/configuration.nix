@@ -89,9 +89,10 @@
       programs.firefox.enable = true;
       programs.zsh.enable = true;
       nixpkgs.config.allowUnfree = true;
+      programs.nix-ld.enable = true;
       environment.systemPackages = with pkgs; [
         git
-        vscode-fhs
+        vscode
         wget
         obs-studio
         mangohud
