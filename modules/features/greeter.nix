@@ -15,6 +15,11 @@
         };
       };
 
+      environment.etc."greetd/greetdeez.conf".text = ''
+        [ui]
+        theme = "cyber"
+      '';
+
       users.users.greetdeez = {
         isSystemUser = true;
         group = "greetdeez";
