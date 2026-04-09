@@ -1,5 +1,6 @@
 { self, inputs, ... }:
 {
+  # NIRI IS HAVING FUCKING ISSUES: https://github.com/antoineco/dotfiles/commit/11fdaef1b21a1bd942b203f39d3ab916e23a46ab
 
   flake.nixosModules.niri =
     { pkgs, lib, ... }:
