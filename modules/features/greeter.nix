@@ -20,6 +20,10 @@
         theme = "cyber"
       '';
 
+      systemd.tmpfiles.rules = [
+        "d /var/cache/greetdeez 0755 greetdeez greetdeez -"
+      ];
+
       users.users.greetdeez = {
         isSystemUser = true;
         group = "greetdeez";
