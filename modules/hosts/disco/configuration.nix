@@ -13,6 +13,7 @@
         self.nixosModules.thunar
         self.nixosModules.nickHome
         self.nixosModules.devtools
+        self.nixosModules.wine
       ];
 
       # NIX FLAGS

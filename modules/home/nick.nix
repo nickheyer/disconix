@@ -275,6 +275,15 @@
           };
         };
 
+        # WINE/EXE
+        xdg.mimeApps = {
+          enable = true;
+          defaultApplications = {
+            "application/x-ms-dos-executable" = "wine.desktop";
+            "application/x-msdos-program" = "wine.desktop";
+          };
+        };
+
         # BOOKMARKS (THUNAR SIDEBAR)
         gtk.gtk3.bookmarks = [
           "file:///mnt/primary Primary"
