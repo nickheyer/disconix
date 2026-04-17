@@ -1,20 +1,20 @@
 { pkgs, lib, self', ... }:
 {
   # APP LAUNCHERS
-  "Mod+Slash".show-hotkey-overlay = null;
+  "Mod+Slash".show-hotkey-overlay = _: {};
   "Mod+S".spawn-sh = "${lib.getExe self'.packages.discoNoctalia} ipc call launcher toggle";
   "Mod+T".spawn-sh = lib.getExe pkgs.kitty;
-  "Mod+Return".fullscreen-window = null;
+  "Mod+Return".fullscreen-window = _: {};
   "Mod+G".spawn-sh = lib.getExe pkgs.thunar;
   "Mod+C".spawn-sh = lib.getExe pkgs.vscode;
   "Mod+Shift+C".spawn-sh = "${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}";
-  "Mod+Q".close-window = null;
+  "Mod+Q".close-window = _: {};
   "Mod+F".spawn-sh = lib.getExe pkgs.firefox;
 
   # SCREENSHOTS
-  "Print".screenshot-window = null;
-  "Mod+Shift+S".screenshot = null;
-  "Mod+Print".screenshot-screen = null;
+  "Print".screenshot-window = _: {};
+  "Mod+Shift+S".screenshot = _: {};
+  "Mod+Print".screenshot-screen = _: {};
 
   # COLOR PICKER
   "Mod+Shift+P".spawn-sh = "${lib.getExe pkgs.hyprpicker} -a -n";
@@ -23,49 +23,49 @@
   "Mod+L".spawn-sh = lib.getExe pkgs.swaylock;
 
   # OVERVIEW
-  "Mod+O".toggle-overview = null;
+  "Mod+O".toggle-overview = _: {};
 
   # NAVIGATION
-  "Mod+Left".focus-column-or-monitor-left = null;
-  "Mod+Right".focus-column-or-monitor-right = null;
-  "Mod+Home".focus-column-first = null;
-  "Mod+End".focus-column-last = null;
+  "Mod+Left".focus-column-or-monitor-left = _: {};
+  "Mod+Right".focus-column-or-monitor-right = _: {};
+  "Mod+Home".focus-column-first = _: {};
+  "Mod+End".focus-column-last = _: {};
 
   # FOCUS WINDOWS WITHIN A COLUMN
-  "Mod+Up".focus-window-or-workspace-up = null;
-  "Mod+Tab".focus-window-previous = null;
+  "Mod+Up".focus-window-or-workspace-up = _: {};
+  "Mod+Tab".focus-window-previous = _: {};
 
   # MOVE COLUMNS
-  "Mod+Shift+Left".move-column-left-or-to-monitor-left = null;
-  "Mod+Shift+Right".move-column-right-or-to-monitor-right = null;
+  "Mod+Shift+Left".move-column-left-or-to-monitor-left = _: {};
+  "Mod+Shift+Right".move-column-right-or-to-monitor-right = _: {};
 
   # MOVE WINDOWS WITHIN A COLUMN
-  "Mod+Shift+Up".move-window-up-or-to-workspace-up = null;
-  "Mod+Shift+Down".move-window-down-or-to-workspace-down = null;
+  "Mod+Shift+Up".move-window-up-or-to-workspace-up = _: {};
+  "Mod+Shift+Down".move-window-down-or-to-workspace-down = _: {};
 
   # COLUMN WIDTH
-  "Mod+R".switch-preset-column-width = null;
+  "Mod+R".switch-preset-column-width = _: {};
   "Mod+Minus".set-column-width = "-10%";
   "Mod+Equal".set-column-width = "+10%";
-  "Mod+Shift+E".expand-column-to-available-width = null;
+  "Mod+Shift+E".expand-column-to-available-width = _: {};
 
   # WINDOW HEIGHT
   "Mod+Shift+Minus".set-window-height = "-10%";
   "Mod+Shift+Equal".set-window-height = "+10%";
 
   # MAXIMIZE & CENTER
-  "Mod+M".maximize-column = null;
+  "Mod+M".maximize-column = _: {};
 
   # FLOATING
-  "Mod+V".toggle-window-floating = null;
-  "Mod+Shift+V".switch-focus-between-floating-and-tiling = null;
+  "Mod+V".toggle-window-floating = _: {};
+  "Mod+Shift+V".switch-focus-between-floating-and-tiling = _: {};
 
   # TABBED DISPLAY
-  "Mod+W".toggle-column-tabbed-display = null;
+  "Mod+W".toggle-column-tabbed-display = _: {};
 
   # WORKSPACES
-  "Mod+Shift+Page_Down".move-column-to-workspace-down = null;
-  "Mod+Shift+Page_Up".move-column-to-workspace-up = null;
+  "Mod+Shift+Page_Down".move-column-to-workspace-down = _: {};
+  "Mod+Shift+Page_Up".move-column-to-workspace-up = _: {};
 
   # MEDIA KEYS
   "XF86AudioRaiseVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
