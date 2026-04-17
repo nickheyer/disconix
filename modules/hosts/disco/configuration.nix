@@ -25,15 +25,6 @@
       nix.gc.dates = "weekly";
       nix.gc.options = "--delete-older-than 30d";
 
-      # AUTO UPDATE
-      system.autoUpgrade = {
-        enable = true;
-        flake = "/home/nick/disconix";
-        flags = [ "--update-input" "nixpkgs" ];
-        dates = "daily";
-        allowReboot = false;
-      };
-
       # BOOT LOADER
       boot.loader.systemd-boot.enable = true;
       boot.loader.efi.canTouchEfiVariables = true;
@@ -99,6 +90,7 @@
       programs.firefox.enable = true;
       programs.zsh.enable = true;
       nixpkgs.config.allowUnfree = true;
+      nixpkgs.overlays = [ inputs.claude-code.overlays.default ];
       programs.nix-ld.enable = true;
       environment.systemPackages = with pkgs; [
         git

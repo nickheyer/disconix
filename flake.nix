@@ -9,6 +9,8 @@
 
     nickpkgs.url = "github:nickheyer/nixpkg";
 
+    claude-code.url = "github:sadjow/claude-code-nix";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
