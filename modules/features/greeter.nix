@@ -18,6 +18,9 @@
       environment.etc."greetd/greetdeez.conf".text = ''
         [ui]
         theme = "minimal"
+
+        [window]
+        scale = 1.75
       '';
 
       systemd.tmpfiles.rules = [
