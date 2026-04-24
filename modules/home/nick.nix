@@ -284,7 +284,7 @@
           };
         };
 
-        # BOOKMARKS (THUNAR SIDEBAR)
+        # BOOKMARKS (COSMIC FILES SIDEBAR)
         gtk.gtk3.bookmarks = [
           "file:///mnt/primary Primary"
           "file:///mnt/secondary Secondary"

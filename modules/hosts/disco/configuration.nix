@@ -10,7 +10,7 @@
         self.nixosModules.discoHardware
         self.nixosModules.niri
         self.nixosModules.greeter
-        self.nixosModules.thunar
+        self.nixosModules.cosmicf
         self.nixosModules.nickHome
         self.nixosModules.devtools
         self.nixosModules.wine
@@ -69,6 +69,9 @@
 
       # GRAPHICS
       services.xserver.videoDrivers = [ "nvidia" ];
+
+      # JOURNALD LOGGING
+      services.journald.storage = "persistent";
 
       # USER CONFIG
       users.users.nick = {
