@@ -17,10 +17,10 @@
 
       environment.etc."greetd/greetdeez.conf".text = ''
         [ui]
-        theme = "minimal"
+        theme = "cyber"
 
         [window]
-        scale = 1.75
+        scale = 2
       '';
 
       systemd.tmpfiles.rules = [
