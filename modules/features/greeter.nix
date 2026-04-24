@@ -16,7 +16,7 @@
       };
 
       systemd.services.greetd.environment = {
-        WEBKIT_DISABLE_DMABUF_RENDERER = "1";
+        WLR_RENDERER = "vulkan";
       };
 
       environment.etc."greetd/greetdeez.conf".text = ''
