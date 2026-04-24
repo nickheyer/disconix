@@ -18,7 +18,7 @@
 
       environment.etc."greetd/greetdeez.conf".text = ''
         [ui]
-        theme = "cyber"
+        theme = "doom"
 
         [window]
         scale = 2
