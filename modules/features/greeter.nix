@@ -15,9 +15,6 @@
         };
       };
 
-      systemd.services.greetd.environment = {
-        WLR_RENDERER = "vulkan";
-      };
 
       environment.etc."greetd/greetdeez.conf".text = ''
         [ui]
@@ -34,6 +31,7 @@
       users.users.greetdeez = {
         isSystemUser = true;
         group = "greetdeez";
+        extraGroups = [ "video" "render" ];
       };
       users.groups.greetdeez = {};
     };
