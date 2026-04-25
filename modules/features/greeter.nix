@@ -33,7 +33,6 @@
       users.users.greetdeez = {
         isSystemUser = true;
         group = "greetdeez";
-        extraGroups = [ "video" "render" ];
       };
       users.groups.greetdeez = {};
     };
