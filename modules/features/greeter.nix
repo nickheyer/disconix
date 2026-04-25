@@ -15,6 +15,8 @@
         };
       };
 
+      systemd.services.greetd.environment.WLR_RENDERER = "vulkan";
+
 
       environment.etc."greetd/greetdeez.conf".text = ''
         [ui]
