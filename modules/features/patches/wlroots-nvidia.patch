@@ -1,0 +1,24 @@
+Force glFinish() instead of glFlush() in the implicit-sync fallback path.
+
+NVIDIA's proprietary/open driver does not honor wlroots' implicit-sync
+assumption: when a Wayland client (e.g. WebKitGTK) does not opt into the
+explicit-sync protocol, wlroots reaches the glFlush() branch in pass.c,
+hands the buffer to KMS immediately, and NVIDIA may scan out before the
+GPU has finished writing the frame -- producing a periodic full-frame
+black flash whose rate scales with rendering workload.
+
+glFinish() blocks until GPU work completes, restoring the invariant
+wlroots assumes. Same fix the AUR `wlroots-nvidia` package uses; updated
+for the 0.19 file layout (gles2_bind_buffer was refactored into pass.c).
+
+--- a/render/gles2/pass.c
++++ b/render/gles2/pass.c
+@@ -57,7 +57,7 @@
+ 			goto out;
+ 		}
+ 	} else {
+-		glFlush();
++		glFinish();
+ 	}
+
+ 	ok = true;

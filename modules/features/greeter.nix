@@ -5,12 +5,16 @@
     { pkgs, ... }:
     let
       greetdeez = inputs.nickpkgs.packages.${pkgs.stdenv.hostPlatform.system}.greetdeez;
+      wlrootsNvidia = pkgs.wlroots_0_19.overrideAttrs (old: {
+        patches = (old.patches or []) ++ [ ./patches/wlroots-nvidia.patch ];
+      });
+      cageNvidia = pkgs.cage.override { wlroots_0_19 = wlrootsNvidia; };
     in
     {
       services.greetd = {
         enable = true;
         settings.default_session = {
-          command = "${pkgs.cage}/bin/cage -s -m last -- ${greetdeez}/bin/greetdeez";
+          command = "${cageNvidia}/bin/cage -s -m last -- ${greetdeez}/bin/greetdeez";
           user = "greetdeez";
         };
       };
