@@ -190,6 +190,7 @@
         programs.vscode = {
           enable = true;
           profiles.default.userSettings = {
+            "chat.disableAIFeatures" = true;
             "editor.fontSize" = 12;
             "editor.fontFamily" = "'Maple Mono', 'monospace', monospace, 'JetBrainsMono Nerd Font'";
             "editor.scrollbar.vertical" = "visible";
