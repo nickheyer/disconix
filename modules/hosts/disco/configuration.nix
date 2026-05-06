@@ -93,7 +93,12 @@
       programs.firefox.enable = true;
       programs.zsh.enable = true;
       nixpkgs.config.allowUnfree = true;
-      nixpkgs.overlays = [ inputs.claude-code.overlays.default ];
+      nixpkgs.overlays = [
+        inputs.claude-code.overlays.default
+        (final: prev: {
+          openldap = prev.openldap.overrideAttrs (_: { doCheck = false; });
+        })
+      ];
       programs.nix-ld.enable = true;
       environment.systemPackages = with pkgs; [
         git
