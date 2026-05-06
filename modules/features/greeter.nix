@@ -15,12 +15,10 @@
         };
       };
 
-      systemd.services.greetd.environment.WLR_RENDERER = "vulkan";
-
 
       environment.etc."greetd/greetdeez.conf".text = ''
         [ui]
-        theme = "doom"
+        theme = "minimal"
 
         [window]
         scale = 2
