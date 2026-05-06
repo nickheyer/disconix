@@ -63,6 +63,7 @@
           syntaxHighlighting.enable = true;
           shellAliases = {
             rebuild = "sudo nixos-rebuild switch --flake ~/disconix#disco";
+            sync = "sudo nix flake update --flake ~/disconix";
             ff = "fastfetch";
           };
           plugins = [
